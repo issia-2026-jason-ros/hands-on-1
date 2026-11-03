@@ -1,4 +1,4 @@
-# hands-on-1
+# Hands-on activity #1
 
 In this activity, we are going to program an agent to be embedded in a two-wheeled vehicle whose sensors and actuators are controlled through ROS topics.
 ```
