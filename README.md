@@ -38,4 +38,5 @@ Make the vehicle to move forward and tune its speed according to the distance fr
 - Low speed when an obstacle gets close;
 - Stop when the obstacle is in a critical distance.
 
+In addition, blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down.
 
