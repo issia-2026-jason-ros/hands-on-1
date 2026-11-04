@@ -28,4 +28,14 @@ Notes:
 ## Exercise 2 - Implementing a  collision avoidance vehicle
 Use the available resources to implement a vehicle that freely runs in the environment. The only requirement is to avoid obstacles. 
 
+### Exercise 2.1
+Make the vehicle to move forward and stop when an obstacle is detected.
+
+### Exercise 2.2
+Make the vehicle to move forward and tune its speed according to the distance from the obstacle:
+- High speed when the obstacle is in a safe distance;
+- Default speed when the obstacle is in an average distance;
+- Low speed when an obstacle gets close;
+- Stop when the obstacle is in a critical distance.
+
 
