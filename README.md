@@ -8,10 +8,24 @@ Especificar: nome do tópico, tipo de dado do tópico, função do tópico (ex. 
 
 ```
 
-# Exercise 1 - Testing sensors and actuators
-To check if the hardware is fine and also to become familiar with the available ROS resources, use terminal commands to inspect sensor values and to activate the actuators.
+## Exercise 1 - Testing sensors and actuators
+To both check whether the hardware is fine and also to become familiar with the available ROS resources, use terminal commands to inspect sensor values and actuator status and to control the actuators.
 
-# Exercise 2 - Implementing a  collision avoidance vehicle
+For inspecting sensor values and actuator status:
+```
+ros2 topic echo <TOPIC NAME>
+```
+
+For controlling the actuators:
+```
+ros2 topic pub -1 <TOPIC NAME> <TOPIC TYPE> "data: <VALUE>"
+```
+
+Notes: 
+- for boolean topics, VALUE is `true` or `false`.
+- for string topics, VALUE must be enclosed in single quotes.
+
+## Exercise 2 - Implementing a  collision avoidance vehicle
 Use the available resources to implement a vehicle that freely runs in the environment. The only requirement is to avoid obstacles. 
 
 
