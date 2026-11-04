@@ -17,7 +17,7 @@ ros2 topic echo <TOPIC NAME>
 ```
 
 For controlling the actuators:
-```
+```perception_action
 ros2 topic pub -1 <TOPIC NAME> <TOPIC TYPE> "data: <VALUE>"
 ```
 
@@ -39,4 +39,11 @@ Make the vehicle to move forward and tune its speed according to the distance fr
 - Stop when the obstacle is in a critical distance.
 
 In addition, blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down.
+
+
+### Exercise 2.3
+Make the vehicle move around the environment avoiding obstacles. Define your own navigation strategy.
+Observe the following requirements:
+- blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down;
+- blink the turn signal when the vehicle is turning left/right.
 
