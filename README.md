@@ -4,9 +4,9 @@ In this activity, we are going to program an agent to be embedded in a two-wheel
 
 | Topic name | Data type | Function | Possible parameter values |
 |---|---|---|---|
-| `/arduino/motor/command` | `std_msgs/msg/String` | Controls the robot's movement direction | `goAhead`, `goBack`, `goLeft`, `goRight`, `stop` |
+| `/arduino/motor/command` | `std_msgs/msg/String` | Controls the robot's movement direction | `forward`, `backward`, `left`, `right`, `stop` |
 | `/arduino/motor/status` | `std_msgs/msg/String` | Reports the motor's current state (perception) | `stopped`, `running`, `turningRight`, `turningLeft`, `backward` |
-| `/arduino/motor/speed/command` | `std_msgs/msg/String` | Sets the motor speed level | `speedH`, (high)<br>`speedM` (default)<br>`speedL` (low) |
+| `/arduino/motor/speed/command` | `std_msgs/msg/String` | Sets the motor speed level | `high`, `default`,`low`|
 | `/arduino/motor/speed/status` | `std_msgs/msg/String` | Reports the motor's current speed level (perception) | `default`, `high`, `low` |
 | `/arduino/buzzer/command` | `std_msgs/msg/String` | Controls the buzzer | `buzzerOn`, `buzzerOnH`, `buzzerOnL`, `buzzerOff` |
 | `/arduino/buzzer/status` | `std_msgs/msg/String` | Reports the buzzer's current state (perception) | `off`, `on`, `high`, `low` |
