@@ -1,6 +1,6 @@
 # Hands-on activity #1
 
-In this activity, we are going to program an agent to be embedded in a two-wheeled vehicle whose sensors and actuators are controlled through ROS topics.
+In this activity, we are going to program an agent to be embedded in a vehicle whose sensors and actuators are controlled through ROS topics.
 
 | Topic name | Data type | Function | Possible parameter values |
 |---|---|---|---|
@@ -23,6 +23,11 @@ In this activity, we are going to program an agent to be embedded in a two-wheel
 
 ## Exercise 1 - Testing sensors and actuators
 To both check whether the hardware is fine and also to become familiar with the available ROS resources, use terminal commands to inspect sensor values and actuator status and to control the actuators.
+
+First of all, connect with the vehicle companion computer via ssh:
+- Host name: `<VEHICLE NAME>.bot.chon.group`
+- User name: root
+- Password: root
 
 For inspecting sensor values and actuator status:
 ```
