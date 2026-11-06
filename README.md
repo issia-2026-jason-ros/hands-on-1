@@ -44,7 +44,10 @@ Notes:
 - for string topics, VALUE must be enclosed in single quotes.
 
 ## Exercise 2 - Implementing a  collision avoidance vehicle
-Use the available resources to implement a vehicle that freely runs in the environment. The only requirement is to avoid obstacles. 
+
+First of all, clone the repository at `https://github.com/issia-2026-jason-ros/<VEHICLE NAME>`. 
+
+This repository contains a JaCaMo application composed of an agent that has the goal `walk` to move itself around the environment. However, this agent does not have any plan to satisfy its goal. In this exercise, you will code the agent to do that. Use the available ROS topics can be connected to the perceptions and actions of the agent. Use the available ROS topics to connect the cognitive portion of the agent with the hardware.
 
 ### Exercise 2.1
 Make the vehicle to move forward and stop when an obstacle is detected.
