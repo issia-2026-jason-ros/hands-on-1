@@ -76,11 +76,22 @@ Notes:
 
 ## Part 2 - Implementing a  collision avoidance vehicle
 
-### Preliminaries
+###  Preliminaries
 
+#### Getting the base source code
 First of all, clone the repository at `https://github.com/issia-2026-jason-ros/<VEHICLE NAME>`. 
 
 This repository contains a JaCaMo application composed of an agent that has the goal `walk` to move itself around the environment. However, this agent does not have any plan to satisfy its goal. In this exercise, you will code the agent to do that. Use the available ROS topics can be connected to the perceptions and actions of the agent. Use the available ROS topics to connect the cognitive portion of the agent with the hardware.
+
+The vehicle companion computer has a copy of this repository in the folder `~/<VEHICLE NAME>`.
+
+#### Running the agent
+1. Commit the changes
+2. In the vehicle companion computer>
+   - access the application folder:  `cd ~/<VEHICLE NAME>`
+   - update the files: `git pull`
+   - run the application: `./gradlew run`
+   
 
 ### Exercise 2.1
 Make the vehicle to move forward and stop when an obstacle is detected.
