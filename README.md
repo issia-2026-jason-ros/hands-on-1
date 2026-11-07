@@ -96,53 +96,53 @@ Notes:
 - for boolean topics, VALUE must be either `true` or `false`.
 - for string topics, VALUE must be enclosed in single quotes.
 
-## Part 2 - Implementing a  collision avoidance vehicle
+## Part 2 - Implementing a collision-avoidance vehicle
 
 ###  Preliminaries
 
 #### Getting the base source code
-First of all, clone the repository at `https://github.com/issia-2026-jason-ros/<VEHICLE NAME>`. 
+First of all, clone the repository from `https://github.com/issia-2026-jason-ros/<VEHICLE NAME>`. 
 
-This repository contains a JaCaMo application composed of an agent that has the goal `walk` to move itself around the environment. However, this agent does not have any plan to satisfy its goal. In this exercise, you will code the agent to do that. Use the available ROS topics can be connected to the perceptions and actions of the agent. Use the available ROS topics to connect the cognitive portion of the agent with the hardware.
+This repository contains a JaCaMo application with an agent whose goal is to `walk` around the environment. However, the agent does not have any plans to achieve this goal. In this exercise, you will implement the plans required to achieve it. Use the available ROS topics to connect the agent's perceptions and actions to the corresponding hardware resources.
 
 The vehicle companion computer has a copy of this repository in the folder `~/<VEHICLE NAME>`.
 
 #### Running the agent
-Running a new version of the agent requires to upload the changes into the vehicle companion computer, following these steps:
-1. Commit the changes
-2. In the vehicle companion computer>
-   - access the application folder:  `cd ~/<VEHICLE NAME>`
-   - update the files: `git pull`
-   - run the application: `./gradlew run`
+To run a new version of the agent, you must transfer the changes to the vehicle's companion computer by following these steps:
+1. Commit and push the changes to the repository.
+2. In the vehicle's companion computer:
+   - access the application folder:  `cd ~/<VEHICLE NAME>`.
+   - update the files: `git pull`.
+   - run the application: `./gradlew run`.
    
 
 
 ### Exercise 2.1 - Testing the development environment
 This exercise aims to get familiar with the development environment. 
 
-The agent, in its initial version, only print the message `I do not know how to satisfy this goal.`.  Make it also print `Hello world`. The expected output is:
+In its initial version, the agent only prints the message `I do not know how to satisfy this goal.`.  Modify the agent so that it also prints `Hello world`. The expected output is:
 ```
 [chonbot_agent] Hello world.
 [chonbot_agent] I do not know how to satisfy this goal.
 ```
-Change the agent code, upload it into the vehicle companion computer, access it via SSH, run the new agent version and observe the output.
+Modify the agent's code, push the changes to the repository, access the vehicle's companion computer via SSH, pull the changes, run the updated version of the agent, and observe the output.
 
-### Exercise 2.1 - Preventing collisions
-Make the vehicle to move forward and stop when an obstacle is detected.
+### Exercise 2.2 - Preventing collisions
+Make the vehicle move forward and stop when an obstacle is detected.
 
-### Exercise 2.2 - Making a speed adapting vehicle
-Make the vehicle to move forward and tune its speed according to the distance from the obstacle:
-- High speed when the obstacle is in a safe distance;
-- Default speed when the obstacle is in an average distance;
-- Low speed when an obstacle gets close;
-- Stop when the obstacle is in a critical distance.
+### Exercise 2.3 - Implementing adaptive speed control
+Make the vehicle move forward and adjust its speed according to the distance to the detected obstacle:
+- High speed when the obstacle is at a safe distance;
+- Default speed when the obstacle is at a moderate distance;
+- Low speed when the obstacle is nearby;
+- Stop when the obstacle is at a critical distance.
 
-In addition, blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down.
+In addition, briefly blink the brake light for a little while (e.g. for 500 milliseconds) whenever the vehicle reduces its speed.
 
 
-### Exercise 2.3 - Making a collision avoidance vehicle
-Make the vehicle move around the environment avoiding obstacles. Define your own navigation strategy.
+### Exercise 2.4 - Implementing obstacle avoidance
+Make the vehicle navigate the environment while avoiding obstacles. Define your own navigation strategy.
 Observe the following requirements:
-- blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down;
-- blink the turn signal when the vehicle is turning left/right.
+- Blink the brake light whenever the vehicle reduces its speed;
+- Blink the corresponding turn signal whenever the vehicle turns left or right.
 
