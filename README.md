@@ -2,7 +2,27 @@
 
 # 1. Introduction
 
-This activity refers to programming an agent to be embedded in a vehicle whose sensors and actuators are accessible through ROS topics. These topics are specified in the tables below.
+This activity refers to programming an agent to be embedded in a vehicle equipped with the following sensors and actuators:
+
+##### Available actuators:
+- Motor;
+- Buzzer;
+- Headlihgt;
+- Turn signal;
+- Brake light.
+
+##### Available sensors:
+- Motor status sensor;
+- Motor speed sensor;
+- Buzzer status;
+- Headlight status;
+- Turn signal status;
+- Brake light status;
+- Light sensor;
+- Distance sensor;
+- Line detector.
+
+ The sensors and actuators are accessible through ROS topics, which are specified in the tables below. 
 
 #### Actuators Topics
 | Topic name | Data type | Function | Possible parameter values |
@@ -52,7 +72,7 @@ This activity refers to programming an agent to be embedded in a vehicle whose s
 
 # Exercises
 
-## Part 1 - Testing sensors and actuators
+## Part 1 - Using ROS to check sensors and actuators
 To both check whether the hardware is fine and also to become familiar with the available ROS resources, use terminal commands to inspect sensor values and actuator status and to control the actuators.
 
 First of all, connect with the vehicle companion computer via ssh:
@@ -86,6 +106,7 @@ This repository contains a JaCaMo application composed of an agent that has the 
 The vehicle companion computer has a copy of this repository in the folder `~/<VEHICLE NAME>`.
 
 #### Running the agent
+Running a new version of the agent requires to upload the changes into the vehicle companion computer, following these steps:
 1. Commit the changes
 2. In the vehicle companion computer>
    - access the application folder:  `cd ~/<VEHICLE NAME>`
@@ -93,10 +114,21 @@ The vehicle companion computer has a copy of this repository in the folder `~/<V
    - run the application: `./gradlew run`
    
 
-### Exercise 2.1
+
+### Exercise 2.1 - Testing the development environment
+This exercise aims to get familiar with the development environment. 
+
+The agent, in its initial version, only print the message `I do not know how to satisfy this goal.`.  Make it also print `Hello world`. The expected output is:
+```
+[chonbot_agent] Hello world.
+[chonbot_agent] I do not know how to satisfy this goal.
+```
+Change the agent code, upload it into the vehicle companion computer, access it via SSH, run the new agent version and observe the output.
+
+### Exercise 2.1 - Preventing collisions
 Make the vehicle to move forward and stop when an obstacle is detected.
 
-### Exercise 2.2
+### Exercise 2.2 - Making a speed adapting vehicle
 Make the vehicle to move forward and tune its speed according to the distance from the obstacle:
 - High speed when the obstacle is in a safe distance;
 - Default speed when the obstacle is in an average distance;
@@ -106,7 +138,7 @@ Make the vehicle to move forward and tune its speed according to the distance fr
 In addition, blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down.
 
 
-### Exercise 2.3
+### Exercise 2.3 - Making a collision avoidance vehicle
 Make the vehicle move around the environment avoiding obstacles. Define your own navigation strategy.
 Observe the following requirements:
 - blink the brake light for a little while (e.g. 500 milliseconds) when the vehicle slows down;
