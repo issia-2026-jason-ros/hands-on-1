@@ -2,13 +2,13 @@
 
 # 1. Introduction
 
-This activity refers to programming an agent to be embedded in a vehicle equipped with the following sensors and actuators:
+This activity involves programming an agent to be embedded in a vehicle equipped with the following sensors and actuators:
 
 ##### Available actuators:
 - Motor;
 - Buzzer;
-- Headlihgt;
-- Turn signal;
+- Headlight;
+- Turn signals;
 - Brake light.
 
 ##### Available sensors:
@@ -22,15 +22,15 @@ This activity refers to programming an agent to be embedded in a vehicle equippe
 - Distance sensor;
 - Line detector.
 
- The sensors and actuators are accessible through ROS topics, which are specified in the tables below. 
+The sensors and actuators are accessible through ROS topics, as specified in the tables below.
 
 #### Actuators Topics
 | Topic name | Data type | Function | Possible parameter values |
 |---|---|---|---|
-| `/arduino/motor/command` | `std_msgs/msg/String` | Controls the robot's movement direction | `forward`, `backward`, `left`, `right`, `stop` |
-| `/arduino/motor/speed/command` | `std_msgs/msg/String` | Sets the motor speed level | `high`, `default`,`low`|
+| `/arduino/motor/command` | `std_msgs/msg/String` | Controls the vehicle's movement direction | `forward`, `backward`, `left`, `right`, `stop` |
+| `/arduino/motor/speed/command` | `std_msgs/msg/String` | Sets the motor speed | `high`, `default`,`low`|
 | `/arduino/buzzer/command` | `std_msgs/msg/String` | Controls the buzzer | `on`, `off`, `high`, `low` |
-| `/arduino/headlight/command` | `std_msgs/msg/String` | Controls the front headlight | `on`, `off`, `high`, `low` |
+| `/arduino/headlight/command` | `std_msgs/msg/String` | Controls the headlight | `on`, `off`, `high`, `low` |
 | `/arduino/turn_signal/command` | `std_msgs/msg/String` | Controls the turn signals and hazard lights | `alert`, `right`, `left`, `off` |
 | `/arduino/brake_light/command` | `std_msgs/msg/Bool` | Turns the brake light on or off to indicate that the brakes are engaged | `true`, `false` |
 
@@ -73,25 +73,27 @@ This activity refers to programming an agent to be embedded in a vehicle equippe
 # Exercises
 
 ## Part 1 - Using ROS to check sensors and actuators
-To both check whether the hardware is fine and also to become familiar with the available ROS resources, use terminal commands to inspect sensor values and actuator status and to control the actuators.
+To check whether the hardware is working properly and become familiar with the available ROS resources, use terminal commands to inspect sensor readings and actuator status, as well as to control the actuators. 
 
-First of all, connect with the vehicle companion computer via ssh:
+First, connect to the vehicle's companion computer via SSH:
 - Host name: `<VEHICLE NAME>.bot.chon.group`
 - User name: root
 - Password: root
 
-For inspecting sensor values and actuator status:
+In Unix-based systems, use `ssh root@<VEHICLE NAME>.bot.chon.group`.   
+
+To inspect sensor readings and actuator status, use:
 ```
 ros2 topic echo <TOPIC NAME>
 ```
 
-For controlling the actuators:
+To control the actuators, use:
 ```perception_action
-ros2 topic pub -1 <TOPIC NAME> <TOPIC TYPE> "data: <VALUE>"
+ros2 topic pub -1 <TOPIC NAME> <TOPIC TYPE> "{data: <VALUE>}"
 ```
 
 Notes: 
-- for boolean topics, VALUE is `true` or `false`.
+- for boolean topics, VALUE must be either `true` or `false`.
 - for string topics, VALUE must be enclosed in single quotes.
 
 ## Part 2 - Implementing a  collision avoidance vehicle
