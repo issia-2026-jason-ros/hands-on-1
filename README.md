@@ -88,7 +88,7 @@ The sensors and actuators are accessible through ROS topics, as specified in the
 # Exercises
 
 ## Part 1 - Using ROS to check sensors and actuators
-To check whether the hardware is working properly and become familiar with the available ROS resources, use terminal commands to inspect sensor readings and actuator status, as well as to control the [...]
+To check whether the hardware is working properly and become familiar with the available ROS resources, use terminal commands to inspect sensor readings and actuator status, as well as to control the actuators.
 
 First, connect to the vehicle's companion computer via SSH:
 - Host name: `<VEHICLE NAME>.bot.chon.group`
@@ -118,7 +118,7 @@ Notes:
 #### Getting the base source code
 First of all, clone the repository from `https://github.com/issia-2026-jason-ros/<VEHICLE NAME>`. 
 
-This repository contains a JaCaMo application with an agent whose goal is to `walk` around the environment. However, the agent does not have any plans to achieve this goal. In this exercise, you will [...]
+This repository contains a JaCaMo application with an agent whose goal is to `walk` around the environment. However, the agent does not have any plans to achieve this goal. In this exercise, you will implement the necessary elements for the vehicle to achieve this goal.
 
 The vehicle companion computer has a copy of this repository in the folder `~/<VEHICLE NAME>`.
 
