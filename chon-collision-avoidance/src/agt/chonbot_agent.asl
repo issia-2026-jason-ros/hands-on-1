@@ -3,8 +3,7 @@
 !alert_blink.    //blink alert lights when not moving forward
 
 +!start : .my_name(Me)
-   <- //.move("forward");
-      .print("Hello from ", Me).
+   <- .print("Hello from ", Me).
 
 
 +!walk : distance(D) & D <= 50
@@ -23,17 +22,12 @@
 
 
 +!walk 
-   <- //.turnSignal("off");
-      //.brakeLight(false);
-      //.motorSpeed("default");
-      //.wait(500);
-      .move("forward");         .wait(300); //não aciona os motores, apesar de escrever no tópico 
+   <- .move("forward");         .wait(300); //não aciona os motores, apesar de escrever no tópico 
       .turnSignal("off");       .wait(300);
       .brakeLight(false);       .wait(300);
       .motorSpeed("default");   .wait(300);
       .print("Moving forward");
       .wait(distance(D) & D <= 50);
-      //.wait(2000);
       !walk;
       .
       
